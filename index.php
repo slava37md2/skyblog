@@ -87,7 +87,7 @@ if($page + 3 <= $total) $page3right = ' | <a href=index.php?catid='.$catid.'&pag
 if($page + 2 <= $total) $page2right = ' | <a href=index.php?catid='.$catid.'&page='. ($page + 2) .'>'. ($page + 2) .'</a>';
 if($page + 1 <= $total) $page1right = ' | <a href=index.php?catid='.$catid.'&page='. ($page + 1) .'>'. ($page + 1) .'</a>';
 
-// выбор блогов из выбранной категории   
+// выбор статей из выбранной категории   
 echo "<div class=zag>".$textcat."</div>";       
 $skybase3 = mysqli_query($db, "SELECT * FROM skyblog_blog  WHERE cat='$catid' ORDER BY id DESC LIMIT $start, $num");
 if (!$skybase3)
