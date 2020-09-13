@@ -348,7 +348,7 @@ if (isset($act) && $act=="addblog")
   <TR>
     <TD align=middle>
     
-    <div class="dob"><a style="CURSOR: hand" id=SmilesText onclick=SmilesTable() class="dob">Добавить блог</a></div>
+    <div class="dob"><a style="CURSOR: hand" id=SmilesText onclick=SmilesTable() class="dob">Добавить статью</a></div>
      
       
       </TD></TR>
@@ -403,7 +403,7 @@ if (isset($act) && $act=="addblog")
     <td colspan="2" align="center">
     <input type="hidden" name="act" value="addblog" />
     <input type="hidden" name="catid" value="<?php echo $catid; ?>" />
-<input name="" type="submit" value="Добавить блог" /></center><br></td>
+<input name="" type="submit" value="Добавить статью" /></center><br></td>
   </tr>
   
   
