@@ -84,7 +84,7 @@ while ($skyrowcat = mysqli_fetch_array($skybase));
             
             
 <?php
-// выбор последних блогов           
+// выбор последних статей           
 $skybase2 = mysqli_query($db, "SELECT id,title FROM skyblog_blog ORDER BY id DESC LIMIT 5");
 if (!$skybase2)
 { echo "<p>База данных не доступна<br> <strong>Ошибка: </strong></p>";
@@ -92,7 +92,7 @@ exit(mysqli_error($db)); }
 if (mysqli_num_rows($skybase2) > 0)
 {  $skyrow2 = mysqli_fetch_array($skybase2); }
 else {
-echo "<p>блогов нет</p>";
+echo "<p>статей нет</p>";
 }			
 
 
@@ -145,7 +145,7 @@ $na_str = $skyrowopt["na_str"];
 <input class=bginp2 onblur=inputBG(this,0)  onfocus=inputBG(this,1) name="name" type="text" value="<?php echo "$name"; ?>" /><br><br>
 пароль:<br>
 <input value="<?php echo "$pass"; ?>" class=bginp2 onblur=inputBG(this,0)  onfocus=inputBG(this,1) name="pass" type="text" /><br><br>
-блогов на странице:<br>
+статей на странице:<br>
 <input value="<?php echo "$na_str"; ?>" class=bginp2 onblur=inputBG(this,0)  onfocus=inputBG(this,1) name="na_str" type="text" /><br><br>
 <input name="act" type="hidden" value="opt" />
 <input value="изменить" type="submit" /><br>
