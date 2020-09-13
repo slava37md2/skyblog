@@ -176,7 +176,7 @@ if (!empty($goform)){
 	if ($na==1 and $me==1 and $kap == 1){
 	
 $comavtor = trim($comavtor);
-$comavtor = stripslashes($comavtor);
+//$comavtor = stripslashes($comavtor);
 $comavtor = htmlspecialchars($comavtor);
 
 $comemail = trim($comemail);
@@ -184,7 +184,7 @@ $comemail = stripslashes($comemail);
 $comemail = htmlspecialchars($comemail);
 
 $comtext = trim($comtext);
-$comtext = stripslashes($comtext);
+//$comtext = stripslashes($comtext);
 $comtext = htmlspecialchars($comtext);	
 	
 	$dobavka = mysqli_query ($db, "INSERT INTO skyblog_coment (comblog,comavtor,comemail,comdate,comtext,comotvet) VALUES ('$id', '$comavtor','$comemail','$comdate','$comtext','')");
