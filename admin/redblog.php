@@ -65,7 +65,7 @@ $skyrowdelpic = mysqli_fetch_array($skybasedelpic);
 $skybaseredblog = mysqli_query ($db, "UPDATE skyblog_blog SET pic='' WHERE id='$id'");
 }
 
-//редактирование блога
+//редактирование статьи
 if (isset($act) && $act=="redblog")
 {       
 
@@ -171,7 +171,7 @@ if (isset($act) && $act=="redblog")
 						
 							if (!$skybaseredblog)
 							{
-							echo "<br><div class=alert>Блог не изменен.<br> <strong>Ошибка: </strong></div>";
+							echo "<br><div class=alert>Статья не изменена.<br> <strong>Ошибка: </strong></div>";
 							exit(mysqli_error($db));
 							}
 						}
@@ -197,7 +197,7 @@ $skyredcom = mysqli_query ($db, "UPDATE skyblog_coment SET comotvet='$comotvet' 
 
 }
 
-// блог крупно 
+// статья крупно 
 $skybase3 = mysqli_query($db, "SELECT * FROM skyblog_blog WHERE id='$id'");
 if (!$skybase3)
 { echo "<p>База данных не доступна<br> <strong>Ошибка: </strong></p>";
@@ -211,7 +211,7 @@ exit(); }
 if (empty($skyrow3["pic"])) { $pict = ""; } else { $pict = "<img align=left border=0 src='../picblog/".$skyrow3["pic"]."' />"; }
 printf ("<form action='redblog.php' method='post' name='redblog' enctype='multipart/form-data'><div class='bolokno_verh'></div>
     	<div class='bolokno_bg'>
-		  <div class='bolokno_title'><a title='удалить блог вместе с комментариями' href='index.php?catid=%s&act=delblog&id=%s'><img align=right border=0 src='pic/del.png' /> </a>название: <input class=bginp2 onblur=inputBG(this,0)  onfocus=inputBG(this,1) name='title' type='text' value='%s' size=70 /></div> 
+		  <div class='bolokno_title'><a title='удалить статью вместе с комментариями' href='index.php?catid=%s&act=delblog&id=%s'><img align=right border=0 src='pic/del.png' /> </a>название: <input class=bginp2 onblur=inputBG(this,0)  onfocus=inputBG(this,1) name='title' type='text' value='%s' size=70 /></div> 
   			<div class='bolokno_int'> %s</a>заменить/добавить изображение<br><input class=bginp2 onblur=inputBG(this,0)  onfocus=inputBG(this,1) type='file' name='file' size='50' /><br>
 			
 			
