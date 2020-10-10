@@ -74,7 +74,7 @@ function russian_date() {
 }
 $comdate = russian_date("j F, Y года, H:i");    
 
-//извлечение данных о блоге
+//извлечение данных о статье
 $skybase01 = mysqli_query($db, "SELECT title,kslova,descript FROM skyblog_blog WHERE id='$id'");
 if (!$skybase01)
 { echo "<p>База данных не доступна<br> <strong>Ошибка: </strong></p>";
@@ -113,7 +113,7 @@ $title = $skyrow01["title"];
     
     
 <?php
-// блог крупно 
+// статья крупно 
 $skybase3 = mysqli_query($db, "SELECT * FROM skyblog_blog WHERE id='$id'");
 if (!$skybase3)
 { echo "<p>База данных не доступна<br> <strong>Ошибка: </strong></p>";
@@ -130,7 +130,7 @@ printf ("<div class='bolokno_verh'></div>
   			<div class='bolokno_int'>%s<br><br><span class=sm>%s | Добавил: <b>%s</b> | Просмотров: <b>%s</b></span></div>
 			
     	</div>
-    <div class='bolokno_niz'></div>", $skyrow3["title"], $skyrow3["text"], $skyrow3["data"], $skyrow3["avtor"], $skyrow3["prosmotr"]);
+    <div class='bolokno_niz'></div>", $skyrow3["title"], str_replace("\n","<br>",$skyrow3["text"]), $skyrow3["data"], $skyrow3["avtor"], $skyrow3["prosmotr"]);
 
 $pr = $skyrow3["prosmotr"];
 $pr++;
