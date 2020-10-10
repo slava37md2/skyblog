@@ -62,7 +62,7 @@ exit(mysqli_error($db)); }
 if (mysqli_num_rows($skybase2) > 0)
 {  $skyrow2 = mysqli_fetch_array($skybase2); }
 else {
-echo "<p>Блогов нет</p>";
+echo "<p>Статей нет</p>";
 }			
 
 do {
