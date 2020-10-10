@@ -55,7 +55,7 @@ CREATE TABLE `skyblog_cat` (
 -- Дамп данных таблицы `skyblog_cat`
 -- 
 
-INSERT INTO `skyblog_cat` VALUES (1, 'News', 'Free script, SkyScript, Sky, Blog, script', 'Free scripts — SkyScript', 'Free scripts — SkyScript');
+INSERT INTO `skyblog_cat` VALUES (1, 'News', 'Free script, SkyScript, Sky, Blog, script', 'Free scripts - SkyScript', 'Free scripts - SkyScript');
 
 -- --------------------------------------------------------
 
