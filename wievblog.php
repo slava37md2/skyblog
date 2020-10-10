@@ -153,7 +153,8 @@ if (!empty($goform)){
 	else {$me = 1;}
 		
 	if (!empty($comemail)){
-		if (eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)+$", $comemail))
+		//if (eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)+$", $comemail))
+        if(filter_var($comemail, FILTER_VALIDATE_EMAIL))
 		{ 
 		
 		}
