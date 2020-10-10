@@ -120,7 +120,7 @@ if (isset($act) && $act=="delcat" && !empty($catid))
 			if (mysqli_num_rows($skybasepicpr) > 0)
 			
 			{
-			echo "<center><br><div class=alert>Раздел содержит блоги, удалите сначала их</div></center>"; 
+			echo "<center><br><div class=alert>Раздел содержит статьи, удалите сначала их</div></center>"; 
 			}
 			
 			else
@@ -130,7 +130,7 @@ if (isset($act) && $act=="delcat" && !empty($catid))
 			}
 }
 
-//удаление блогов
+//удаление статей
 if (isset($act) && $act=="delblog" && !empty($catid))
 {
 
@@ -223,7 +223,7 @@ echo "
 }
 
 
-//добавление блога
+//добавление статьи
 if (isset($act) && $act=="addblog")
 {       
 
@@ -322,7 +322,7 @@ if (isset($act) && $act=="addblog")
 									
 							if (!$skybaseaddblog)
 							{
-							echo "<br><div class=alert>Блог не добавлен.<br> <strong>Ошибка: </strong></div>";
+							echo "<br><div class=alert>Статья не добавлена.<br> <strong>Ошибка: </strong></div>";
 							exit(mysqli_error($db));
 							}
 			
@@ -471,7 +471,7 @@ if($page + 1 <= $total) $page1right = ' | <a href=index.php?catid='.$catid.'&pag
 
 
 
-// вывод блогов из выбранной категории   
+// вывод статей из выбранной категории   
        
 $skybase3 = mysqli_query($db, "SELECT * FROM skyblog_blog  WHERE cat='$catid' ORDER BY id DESC LIMIT $start, $num");
 if (!$skybase3)
@@ -486,7 +486,7 @@ if (!empty($skyrow3["pic"])) { $picbl = "<img style='margin-right:10px;' border=
 else { $picbl = "";}		
 		printf ("<div class='bolokno_verh'></div>
 				<div class='bolokno_bg'>
-				<a title='удалить блог вместе с комментариями' href='index.php?page=$page&catid=$catid&act=delblog&id=%s'><img align=right border=0 src='pic/del.png' /> </a> 
+				<a title='удалить статью вместе с комментариями' href='index.php?page=$page&catid=$catid&act=delblog&id=%s'><img align=right border=0 src='pic/del.png' /> </a> 
 				  <div class='bolokno_title'><a title=редактировать href=redblog.php?id=%s>%s</a></div>
 				  
 					<div class='bolokno_int'> %s %s<br><br><span class=sm>%s | Добавил: <b>%s</b> | Просмотров: <b>%s</b></span></div> 
@@ -502,7 +502,7 @@ else {
 
 $skybase_cat = mysqli_query($db, "SELECT cattitle FROM skyblog_cat WHERE id='$catid'");
 $skyrow_cat = mysqli_fetch_array($skybase_cat);
-echo "<center><div>Категория <b>".$skyrow_cat["cattitle"]."</b> не содержит блогов.</div></center>";
+echo "<center><div>Категория <b>".$skyrow_cat["cattitle"]."</b> не содержит статей.</div></center>";
 // exit();
 }			
  
